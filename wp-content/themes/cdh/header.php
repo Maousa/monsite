@@ -10,7 +10,7 @@
     <!-- CSS de Bootstrap -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Ajout d'une nouvelle feuille de style qui sera spécifique à notre thème -->
-    <link href="<?php bloginfo('template_directory');?>/style.css" rel="stylesheet">
+    <!-- <link href="<?php bloginfo('template_directory');?>/style.css" rel="stylesheet"> -->
     <!-- HTML5 shim et Respond.js pour supporter les éléments HTML5 pour les versions plus anciennes que Internet Explorer 9 -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -28,13 +28,16 @@
                     }
                 ?>
             </div>
-            <div class="col-9">
+            <div class="col-9 bloc-menu-visible">
                 <?php wp_nav_menu(array('theme_location' => 'menu principal' ) ); ?>
                 <h1 class="assoName">Cercle diplomatique <br>international humanitaire</h1>   
                 <?php wp_nav_menu(array('theme_location' => 'social' ) ); ?>
             </div>
+            <div class="menu-fixed">
+                <?php wp_nav_menu(array('theme_location' => 'social' ) ); ?>
+            </div>
         </div>
-        <div class="information">
+        <div class="information js-section">
             <?php $post = get_post_by_title('Urgence covid-19 !'); //var_dump($post);?>
             <h3><?php echo $post->post_title;?></h3>
             <p><?php the_excerpt(); ?></p>

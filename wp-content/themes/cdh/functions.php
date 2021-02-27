@@ -7,6 +7,13 @@
         wp_enqueue_style('chart-style');
         wp_register_style('bootstrap-style', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', array(), true);
         wp_enqueue_style('bootstrap-style');
+
+        wp_register_script('jquery', get_template_directory_uri() .'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', array(), true); 
+        wp_enqueue_script('jquery');
+        wp_register_script('waypoints', get_template_directory_uri() .'/vendors/js/jquery.waypoints.min.js', array(), true); 
+        wp_enqueue_script('waypoints');
+        wp_register_script('script', get_template_directory_uri() .'/js/script.js', array(), true); 
+        wp_enqueue_script('script');
     }
     add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
@@ -47,6 +54,15 @@
             return $post;
         return null;
     }
+    //récuperation d'un article spécial dans wordpress
+    // function get_posts() {
+    //     global $wpdb;
+    //     $posts = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts"));
+    //     if ($posts)
+    //         return $posts;
+    //     return null;
+    // }
+    
     //récuperation d'un lien
     function excerpt_new($outpout){  
         global $post;    

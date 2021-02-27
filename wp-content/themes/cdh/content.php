@@ -34,6 +34,31 @@
     <div class="image" style="background: #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
     <div class="image" style="background: #FF00FF; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
 </div>
+<div class="row">   
+    <div class="nos-valeurs">
+    <?php 
+        $args = array("posts_per_page" => 6, "orderby" => "comment_count", "tax_query" => array(
+            array(
+                "taxonomy" => "category",
+                "field" => "slug",
+                "terms" => "valeurs"
+            )
+        ));
+        $posts_array = get_posts($args);
+        foreach($posts_array as $post)
+        {
+            echo "<div class='valeur-item'>";
+                echo "<div class='valeur-item-title'>";
+                    echo "<h1>" . $post->post_title . "</h1>";
+                echo "</div>";
+                echo "<div class='valeur-item-content'>";
+                    echo "<p>" . $post->post_content . "</p>";
+                echo "</div>";
+            echo "</div>";
+        } 
+    ?>
+    </div>
+</div> 
 <div class="blog-chart row">
     <div id="chartdiv"></div>
 </div>
