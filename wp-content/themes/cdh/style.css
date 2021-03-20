@@ -5,6 +5,8 @@ Description: Template WordPress pour l'association CDH
 Version: 0.0.1
 Tags: bootstrap
 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
 
 *{
     padding: 0;
@@ -15,8 +17,8 @@ Tags: bootstrap
 html{
     background-color: #ffffff;
     color: #555;
-    font-family: 'Lato','Arial', sans-serif;
-    font-size: 20px;
+    font-family: 'Open Sans','Arial', sans-serif;
+    font-size: 20px !important;
     font-weight: 300;
     text-rendering: optimizeLegibility;
 }
@@ -46,9 +48,13 @@ a{
     position: relative;
 }
 
-.row {
+/* .row {
     margin: auto 0;
     width: 1140px;
+} */
+.row { 
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .row-menu{
     display: flex;
@@ -75,7 +81,7 @@ a{
     padding: 0;
     font-weight: 300;
     text-decoration: none;
-    color:  #e67e22 !important;
+    color:  #e63812 !important;
     transition: color 0.2s;
 }
 
@@ -89,7 +95,7 @@ a{
     display: block;
     width: 0;
     height: 2px;
-    background: #e67e22;
+    background: #e63812;
     transition: width .2s;
 }
 
@@ -105,6 +111,15 @@ a{
     background-color: #000000;
     z-index: 100;
     display: none;
+}
+
+.row-menu-fixed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    height: 80px;
 }
 .assoName {
     font-size: 30px;
@@ -131,11 +146,12 @@ a{
     top: 65%;
     left: 60%;
     transform: translate(-50%,-50%);
-    color:  #e67e22 !important;
+    color:  #e63812 !important;
 }
 
 .slogan h3 {
-    font-size: 300% !important;
+    font-size: 200% !important;
+    text-transform: uppercase;
 }
 
 .blog-mission {
@@ -188,8 +204,8 @@ a{
 
 .btn-full:link,
 .btn-full:visited {
-    background-color: #e67e22;
-    border: solid 1px #e67e22;
+    background-color: #e63812;
+    border: solid 1px #e63812;
     color: #ffffff;
     margin-right: 15px;
 }
@@ -201,8 +217,8 @@ a{
 
 .btn-ghost:link,
 .btn-ghost:visited {
-    border: solid 1px #e67e22;
-    color: #e67e22 !important;
+    border: solid 1px #e63812;
+    color: #e63812 !important;
 }
 
 .btn-ghost:hover,
@@ -226,7 +242,7 @@ a{
     position: fixed;
     top: 40%;
     right: 20px;
-    background-color: #cf6d17;
+    background-color: #e63812;
     padding: 10px 3%;
     color: white;
     text-transform: uppercase;
@@ -240,8 +256,8 @@ a{
 
 .don:hover {
     opacity: 1;
-    color: #cf6d17;
-    border: solid 1px #cf6d17;
+    color: #e63812;
+    border: solid 1px #e63812;
     background-color: #ffffff;
 }
 
@@ -250,10 +266,7 @@ a{
     flex-direction: row;
     align-items: center;
     background-color: #000000;
-    width: 1200px;
     height: 518px;
-    padding: 6%;
-    margin: 60px 0;
 }
 
 .blocImage .image{
@@ -262,6 +275,14 @@ a{
     transition: width .2s;
     cursor: pointer;
 }
+
+.blocImage .image-stl{
+    height: 100%;
+    width: 25% !important;
+    transition: width .2s;
+    cursor: pointer;
+}
+
 .blocImage .image:hover {
     width: 100% !important;
     cursor: pointer;
@@ -300,19 +321,43 @@ a{
 
 .nos-valeurs{
     display: inline-block;
-    padding: 3%;
-    /* flex-direction: row; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    padding: 6%;
     width: 100%;
-    height: 500px;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+    height: auto;
     text-align: center;
-    background-color: aquamarine;
+    background-color: #0C0C0C;
 }
 
 .valeur-item {
     width: 50%;
     float: left;
+    min-height: 120px;
+    height: 200px;
+    padding: 3%;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.valeur-item ::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.valeur-item-trait:before{
+    content: '';
+    display: block;
+    width: 350px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 20px;
+}
+
+.valeur-item-title h1{
+    font-family: 'Open sans', 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.valeur-item-content {
+    color: #ffffff;
 }

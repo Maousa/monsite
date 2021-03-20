@@ -8,9 +8,7 @@
     <meta name="author" content="">
     <title>CDH</title>
     <!-- CSS de Bootstrap -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Ajout d'une nouvelle feuille de style qui sera spécifique à notre thème -->
-    <!-- <link href="<?php bloginfo('template_directory');?>/style.css" rel="stylesheet"> -->
     <!-- HTML5 shim et Respond.js pour supporter les éléments HTML5 pour les versions plus anciennes que Internet Explorer 9 -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -18,7 +16,7 @@
     <![endif]-->
     <?php wp_head(); ?>
 </head>
-<body>
+<body class="container">
     <div class="header">
         <div class="row-menu">
             <div class="col-3">
@@ -34,7 +32,18 @@
                 <?php wp_nav_menu(array('theme_location' => 'social' ) ); ?>
             </div>
             <div class="menu-fixed">
-                <?php wp_nav_menu(array('theme_location' => 'social' ) ); ?>
+                <div class="row-menu-fixed">
+                    <div class="col-md-3">
+                        <?php 
+                            if (function_exists('the_custom_logo')) { 
+                                the_custom_logo(); 
+                            }
+                        ?>
+                    </div>
+                    <div class="col-md-9">
+                        <?php wp_nav_menu(array('theme_location' => 'social' ) ); ?>
+                    </div>
+                </div>  
             </div>
         </div>
         <div class="information js-section">
@@ -46,7 +55,7 @@
             <?php $post = get_post_by_title('slogan'); //var_dump($post);?>
             <h3><?php echo $post->post_content;?></h3>
         </div>
-    </div>
+    </div> 
     <div class="container">
         <!-- <div class="blog-header">
             <h1 class="blog-title"><a href="<?php echo get_bloginfo('wpurl');?>"><?php echo get_bloginfo('name'); ?></a></h1>

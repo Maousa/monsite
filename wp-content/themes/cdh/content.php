@@ -12,13 +12,12 @@
 </div>
 
 <div class="blocImage row">
-    <div class="image" style="background:  #f0f8ff; background-size: cover;min-width: 120px;"></div>
-    <!-- <div class="image" style="background: #FF00FF; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #FF00FF; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background:  #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #FF00FF; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div> -->
+    <div class="image" style="background:  #f1f1f1; background-size: cover;min-width: 120px;"></div>
+    <div class="image" style="background:  #000000; background-size: cover;min-width: 120px;"></div>
+    <div class="image" style="background:  #f1f1f1; background-size: cover;min-width: 120px;"></div>
+    <div class="image" style="background:  #000000; background-size: cover;min-width: 120px;"></div>
+    <div class="image" style="background:  #f1f1f1; background-size: cover;min-width: 120px;"></div>
+    <div class="image" style="background:  #000000; background-size: cover;min-width: 120px;"></div>
 </div>
 <div class="blog-mission row">
     <?php $post = get_post_by_title('Vous avez un rôle à jouer'); //var_dump($post);?>
@@ -28,14 +27,19 @@
     </h3>
     <p><?php the_excerpt(); ?></p>
 </div>
-<div class="blocImage">
-    <div class="image" style="background:  #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #FF00FF; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
-    <div class="image" style="background: #FF00FF; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
+<div class="blocImage row">
+    <div class="image-stl" style="background:  #f0f8ff; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
+    <div class="image-stl" style="background: #000000; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
+    <div class="image-stl" style="background: #f1f1f1; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
+    <div class="image-stl" style="background: #000000; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
+    <div class="image-stl" style="background: #f1f1f1; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
+    <div class="image-stl" style="background: #000000; background-size: cover;min-width: 120px; width:25%; height: 100%;"></div>
 </div>
 <div class="row">   
     <div class="nos-valeurs">
+    <h3 class="lptitle" style="color:#ffffff">
+       NOS VALEURS
+    </h3>
     <?php 
         $args = array("posts_per_page" => 6, "orderby" => "comment_count", "tax_query" => array(
             array(
@@ -50,6 +54,7 @@
             echo "<div class='valeur-item'>";
                 echo "<div class='valeur-item-title'>";
                     echo "<h1>" . $post->post_title . "</h1>";
+                    echo "<span class='valeur-item-trait'></span>";
                 echo "</div>";
                 echo "<div class='valeur-item-content'>";
                     echo "<p>" . $post->post_content . "</p>";
@@ -62,4 +67,4 @@
 <div class="blog-chart row">
     <div id="chartdiv"></div>
 </div>
-<div class="don">je fais un don</div>
+<div class="don">donate</div>
